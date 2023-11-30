@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8yl8eecnvyw2"]
+
+[ext_resource type="Script" path="res://Scenes/laser.gd" id="1_bgor5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wgs75"]
+size = Vector2(20, 2)
+
+[node name="Laser" type="Area2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_bgor5")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(1, 0, 0.101961, 1)
+polygon = PackedVector2Array(-10, 1, 10, 1, 10, -1, -10, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_wgs75")

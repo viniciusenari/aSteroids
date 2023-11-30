@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cph60xm3niypx"]
+
+[ext_resource type="Script" path="res://Scenes/level.gd" id="1_6cia7"]
+[ext_resource type="PackedScene" uid="uid://dw4u2us7651ne" path="res://Scenes/player.tscn" id="1_mc23y"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_6cia7")
+
+[node name="Player" parent="." instance=ExtResource("1_mc23y")]
+position = Vector2(538, 285)
+
+[node name="Projectiles" type="Node2D" parent="."]
+
+[connection signal="shot_fired" from="Player" to="." method="_on_player_shot_fired"]

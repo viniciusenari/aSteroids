@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://dw4u2us7651ne"]
+
+[ext_resource type="Script" path="res://Scenes/player.gd" id="1_lbw01"]
+
+[node name="Player" type="CharacterBody2D"]
+collision_mask = 10
+script = ExtResource("1_lbw01")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(30, 0, -30, 15, -30, -15)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-30, -15, -30, 15, 30, 0)
+
+[node name="Timers" type="Node" parent="."]
+
+[node name="ShootTimer" type="Timer" parent="Timers"]
+one_shot = true
+
+[node name="LaserPosition" type="Marker2D" parent="."]
+position = Vector2(35, 0)
+
+[connection signal="timeout" from="Timers/ShootTimer" to="." method="_on_shoot_timer_timeout"]
