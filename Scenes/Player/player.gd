@@ -9,6 +9,8 @@ var laser_distance: int = 5
 
 
 func _process(_delta):
+	Globals.player_position = global_position
+	
 	var direction: Vector2 = Input.get_vector("left", "right", "up", "down")
 	velocity = direction * SPEED
 	move_and_slide()

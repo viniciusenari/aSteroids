@@ -10,11 +10,20 @@ config_version=5
 
 [application]
 
-config/name="aSteroids_2"
-run/main_scene="res://Scenes/level.tscn"
+config/name="aSteroids"
+run/main_scene="res://Scenes/Levels/level.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 run/max_fps=144
 config/icon="res://icon.svg"
+
+[autoload]
+
+Globals="*res://globals.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
 
 [file_customization]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dw4u2us7651ne"]
 
-[ext_resource type="Script" path="res://Scenes/player.gd" id="1_lbw01"]
+[ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_lbw01"]
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 10
