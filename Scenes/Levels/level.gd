@@ -15,11 +15,11 @@ func _on_player_shot_fired(positions, laser_direction):
 		$Projectiles.add_child(laser)
 
 
-func _on_spawner_spawn(x_range, y_range, enemies_scenes):
+func _on_spawner_spawn(x_range, y_range, enemies_scenes, spawner_position):
 	var enemy = enemies_scenes[randi() % len(enemies_scenes)].instantiate()
 	$Enemies.add_child(enemy)
 	
 	var position_offset: Vector2 = Vector2(randi_range(-x_range, x_range), randi_range(-y_range, y_range))
-	var direction: Vector2 = (Globals.player_position - position).normalized()
-	enemy.global_position = global_position + position_offset
+	var direction: Vector2 = (Globals.player_position - (spawner_position + position_offset)).normalized()
+	enemy.global_position = spawner_position + position_offset
 	enemy.direction = direction

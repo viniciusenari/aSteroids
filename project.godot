@@ -13,7 +13,6 @@ config_version=5
 config/name="aSteroids"
 run/main_scene="res://Scenes/Levels/level.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
-run/max_fps=144
 config/icon="res://icon.svg"
 
 [autoload]
@@ -69,6 +68,7 @@ primary_action={
 2d_physics/layer_2="Enemies"
 2d_physics/layer_3="Player Projectiles"
 2d_physics/layer_4="Enemies Projectiles"
+2d_physics/layer_5="Boundary"
 
 [rendering]
 

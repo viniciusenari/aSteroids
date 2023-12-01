@@ -5,9 +5,9 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_5f05p"]
 radius = 25.0
 
-[node name="SmallAsteroid" type="Area2D"]
+[node name="SmallAsteroid" type="RigidBody2D"]
 collision_layer = 2
-collision_mask = 21
+collision_mask = 5
 script = ExtResource("1_woapf")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]

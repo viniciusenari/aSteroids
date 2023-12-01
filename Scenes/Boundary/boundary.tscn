@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b45v57lrqafc"]
+
+[ext_resource type="Script" path="res://Scenes/Boundary/boundary.gd" id="1_klfki"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vyxi0"]
+radius = 1268.06
+
+[node name="Boundary" type="Area2D"]
+collision_layer = 16
+collision_mask = 14
+script = ExtResource("1_klfki")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_vyxi0")
+
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
