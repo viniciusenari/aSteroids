@@ -19,6 +19,7 @@ func _process(_delta):
 	var laser_direction: Vector2 = (get_global_mouse_position() - position).normalized()
 	if Input.is_action_pressed("primary_action") and can_shoot:
 		shoot(laser_direction)
+	
 
 func hit():
 	print("Player was hit")

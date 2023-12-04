@@ -12,7 +12,7 @@ var initial_position: Vector2
 func _ready():
 	initial_position = position
 	
-func _process(delta):
+func _process(_delta):
 	position = initial_position + Globals.player_position
 	if can_spawn:
 		spawn.emit(x_range, y_range, enemies_scenes, global_position)

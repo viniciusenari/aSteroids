@@ -11,13 +11,15 @@ func _ready():
 func _process(delta):
 	position += direction * SPEED * delta
 
-func _on_area_entered(area):
-	if "hit" in area:
-		area.hit()
-		pierce -= 1
-		if pierce == 0:
-			queue_free()
 
 
 func _on_laser_lifetime_timer_timeout():
 	queue_free()
+
+
+func _on_body_entered(body):
+	if "hit" in body:
+		body.hit("player")
+		pierce -= 1
+		if pierce == 0:
+			queue_free()
