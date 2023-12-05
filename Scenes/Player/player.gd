@@ -20,10 +20,6 @@ func _process(_delta):
 	if Input.is_action_pressed("primary_action") and can_shoot:
 		shoot(laser_direction)
 	
-
-func hit():
-	print("Player was hit")
-	
 func shoot(laser_direction):
 	var positions = calculate_laser_positions()
 	shot_fired.emit(positions, laser_direction)
@@ -46,3 +42,10 @@ func calculate_laser_positions():
 
 func _on_shoot_timer_timeout():
 	can_shoot = true
+
+func hit():
+	print("player was hit")
+	Globals.player_health -= 10
+
+func _on_hurt_box_area_entered(_area):
+	hit()

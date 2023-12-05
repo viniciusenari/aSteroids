@@ -39,5 +39,6 @@ x_range = 550
 [node name="Boundaries" type="Node" parent="."]
 
 [node name="Boundary" parent="Boundaries" instance=ExtResource("4_8ai8v")]
+metadata/_edit_lock_ = true
 
 [connection signal="shot_fired" from="Player" to="." method="_on_player_shot_fired"]

@@ -19,6 +19,5 @@ func _process(_delta):
 		can_spawn = false
 		$SpawnTimer.start()
 	
-	
 func _on_spawn_timer_timeout():
 	can_spawn = true

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_lbw01"]
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
-collision_mask = 10
+collision_mask = 778
 script = ExtResource("1_lbw01")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
@@ -20,5 +20,21 @@ one_shot = true
 
 [node name="LaserPosition" type="Marker2D" parent="."]
 position = Vector2(35, 0)
+gizmo_extents = 0.0
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_mask = 10
+monitoring = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitBox"]
+polygon = PackedVector2Array(-30, -15, -30, 15, 30, 0)
+
+[node name="HurtBox" type="Area2D" parent="."]
+collision_mask = 10
+monitorable = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HurtBox"]
+polygon = PackedVector2Array(-30, -15, -30, 15, 30, 0)
 
 [connection signal="timeout" from="Timers/ShootTimer" to="." method="_on_shoot_timer_timeout"]
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
