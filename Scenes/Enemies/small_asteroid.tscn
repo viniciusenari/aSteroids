@@ -6,12 +6,12 @@
 radius = 25.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_38ltw"]
-radius = 30.0
+radius = 27.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e2v2r"]
-radius = 30.0
+radius = 27.0
 
-[node name="SmallAsteroid" type="RigidBody2D" groups=["Asteroids"]]
+[node name="SmallAsteroid" type="RigidBody2D" groups=["Asteroids", "Enemies"]]
 collision_layer = 2
 collision_mask = 23
 gravity_scale = 0.0
