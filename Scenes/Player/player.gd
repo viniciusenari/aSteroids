@@ -49,7 +49,6 @@ func _on_shoot_timer_timeout():
 	can_shoot = true
 
 func hit(enemy):
-	print("player was hit")
 	Globals.player_health -= enemy.damage
 
 func _on_hurt_box_area_entered(area):

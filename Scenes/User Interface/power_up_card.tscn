@@ -12,7 +12,7 @@ script = ExtResource("1_kpg6p")
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("1_ry4gu")
-expand_mode = 5
+expand_mode = 4
 stretch_mode = 5
 
 [node name="SelectPowerUpButton" type="Button" parent="."]

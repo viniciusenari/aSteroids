@@ -6,7 +6,7 @@ signal level_up
 
 var player_position: Vector2
 var player_level: int = 1
-var current_level_threshold: float = 100
+var current_level_threshold: float = 50
 
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -34,7 +34,7 @@ var player_xp: float = 0:
 		while player_xp >= current_level_threshold:
 			player_xp -= current_level_threshold
 			player_level += 1
-			current_level_threshold = 100 * (1.5 ** (player_level - 1))
+			current_level_threshold = 50 * (1.25 ** (player_level - 1))
 			level_up.emit()
 		xp_change.emit()
 
