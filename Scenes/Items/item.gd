@@ -2,13 +2,14 @@ extends Area2D
 
 var rotation_speed: float = randf_range(-1,1)
 var available_types = ['health', 'xp', 'xp', 'xp', 'xp', 'xp', 'xp', 'xp', 'xp']
-var type = available_types[randi() % len(available_types)]
+var type = available_types[randi() % len(available_types)] if Globals.player_health < 100 else "xp"
 
 func _ready():
 	if type == "health":
 		$Polygon2D.modulate = Color(0.5, 1, 0.5)
 	elif type == "xp":
 		$Polygon2D.modulate = Color(0.8, 0.8, 0)
+
 
 func _process(delta):
 	rotation += rotation_speed * delta

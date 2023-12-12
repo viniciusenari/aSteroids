@@ -4,10 +4,14 @@ const SPEED: int = 350
 var can_shoot: bool = true
 signal shot_fired(positions)
 
-@export var laser_amount: int = 1
+var laser_amount: int 
 var laser_distance: int = 5
-
 var laser_direction: Vector2
+
+func _ready():
+	Globals.connect("laser_amount_increase", _on_laser_amount_increase)
+	Globals.connect("laser_cooldown_change", _on_laser_cooldown_change)
+	laser_amount = Globals.laser_amount
 
 func _process(_delta):
 	Globals.player_position = global_position
@@ -20,7 +24,7 @@ func _process(_delta):
 	laser_direction = (get_global_mouse_position() - position).normalized()
 	if Input.is_action_pressed("primary_action") and can_shoot:
 		shoot()
-	
+
 func shoot():
 	var positions = calculate_laser_positions()
 	shot_fired.emit(positions, laser_direction)
@@ -50,8 +54,8 @@ func hit(enemy):
 
 func _on_hurt_box_area_entered(area):
 	hit(area.get_parent())
-	
-func add_item(item) -> bool:
+
+func add_item(item: String) -> bool:
 	if item == "health" and Globals.player_health < 100:
 		Globals.player_health += 10
 		return true
@@ -60,3 +64,10 @@ func add_item(item) -> bool:
 		return true
 	
 	return false
+
+
+func _on_laser_amount_increase() -> void:
+	laser_amount = Globals.laser_amount
+
+func _on_laser_cooldown_change() -> void:
+	$Timers/ShootTimer.set_wait_time(Globals.laser_cooldown)

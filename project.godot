@@ -18,11 +18,15 @@ config/icon="res://icon.svg"
 [autoload]
 
 Globals="*res://Global/globals.gd"
+GameManager="*res://Global/game_manager.gd"
 
 [display]
 
-window/size/viewport_width=1280
-window/size/viewport_height=720
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=3
+mouse_cursor/custom_image="res://crossair_red.png"
+mouse_cursor/custom_image_hotspot=Vector2(16, 16)
 
 [file_customization]
 

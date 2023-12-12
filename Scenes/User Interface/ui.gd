@@ -13,4 +13,5 @@ func update_health_bar():
 	health_bar.value = Globals.player_health
 
 func update_xp_bar():
+	xp_bar.max_value = Globals.current_level_threshold
 	xp_bar.value = Globals.player_xp

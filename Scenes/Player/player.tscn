@@ -15,7 +15,6 @@ polygon = PackedVector2Array(-30, -15, -30, 15, 30, 0)
 [node name="Timers" type="Node" parent="."]
 
 [node name="ShootTimer" type="Timer" parent="Timers"]
-wait_time = 0.5
 one_shot = true
 
 [node name="LaserPosition" type="Marker2D" parent="."]

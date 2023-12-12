@@ -6,6 +6,7 @@ var pierce: int
 
 func _ready():
 	pierce = Globals.pierce
+	Globals.connect("pierce_change", _on_pierce_change)
 	$LaserLifetimeTimer.start()
 
 func _process(delta):
@@ -20,3 +21,6 @@ func _on_area_entered(_area):
 	pierce -= 1
 	if pierce == 0:
 		queue_free()
+		
+func _on_pierce_change() -> void:
+	pierce = Globals.pierce

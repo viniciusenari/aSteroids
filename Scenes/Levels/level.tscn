@@ -5,9 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://b45v57lrqafc" path="res://Scenes/Boundary/boundary.tscn" id="4_8ai8v"]
 [ext_resource type="PackedScene" uid="uid://btm1p1ji8rvts" path="res://Scenes/Enemies/Spawners/spawner.tscn" id="4_qqw3l"]
 [ext_resource type="PackedScene" uid="uid://dm8awm0wx7n0" path="res://Scenes/User Interface/ui.tscn" id="5_n6eoi"]
-[ext_resource type="PackedScene" uid="uid://bt2lq6f7b2o5m" path="res://Scenes/Items/item.tscn" id="6_vx1i5"]
+[ext_resource type="PackedScene" uid="uid://b1t7lj4df2iw3" path="res://Scenes/User Interface/pause_menu.tscn" id="6_lsfot"]
 
 [node name="Level" type="Node2D"]
+process_mode = 1
 script = ExtResource("1_6cia7")
 
 [node name="Player" parent="." instance=ExtResource("1_mc23y")]
@@ -45,7 +46,7 @@ metadata/_edit_lock_ = true
 
 [node name="UI" parent="." instance=ExtResource("5_n6eoi")]
 
-[node name="Item" parent="." instance=ExtResource("6_vx1i5")]
-position = Vector2(195, 84)
+[node name="PauseMenu" parent="." instance=ExtResource("6_lsfot")]
+layer = 2
 
 [connection signal="shot_fired" from="Player" to="." method="_on_player_shot_fired"]

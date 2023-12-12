@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnk667sb13rk6"]
+
+[ext_resource type="Script" path="res://Scenes/User Interface/power_up_card.gd" id="1_kpg6p"]
+[ext_resource type="Texture2D" uid="uid://dl5xfyi8hc0rb" path="res://icon.svg" id="1_ry4gu"]
+
+[node name="PowerUpCard1" type="VBoxContainer"]
+size_flags_horizontal = 3
+alignment = 1
+script = ExtResource("1_kpg6p")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("1_ry4gu")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="SelectPowerUpButton" type="Button" parent="."]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Power Up 1"
+
+[connection signal="pressed" from="SelectPowerUpButton" to="." method="_on_select_power_up_button_pressed"]

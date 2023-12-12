@@ -16,15 +16,16 @@ func _ready():
 func _physics_process(delta):
 	move_and_collide(direction * speed * delta)
 	
-
+var invincible = false
 func hit(area):
 	if area.get_parent().is_in_group("Asteroids"):
-		pass
 		die("collision")
 	else:
 		health -= Globals.player_damage
 		if health <= 0:
-			die("player")
+			if not invincible:
+				die("player")
+				invincible = true
 
 func die(death_cause: String):
 	if death_cause == "collision":
@@ -33,6 +34,8 @@ func die(death_cause: String):
 		drop_items.emit(position)
 		queue_free()
 
+
 func _on_hurtbox_area_entered(area):
 	if area != $Hitbox:
 		hit(area)
+		
